@@ -1,0 +1,20 @@
+{
+  "name": "htmltyper",
+  "version": "0.0.1",
+  "description": "HTML富文本逐字显示动画效果",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gasg1993<1225074278@qq.com>",
+  "license": "MIT",
+  "keywords": ["htmltyper", "逐字显示", "typer"],
+  "homepage": "https://github.com/gaosong1993/htmltyper.git",
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com/gaosong1993/htmltyper.git"
+  },
+  "publishConfig": {
+      "registry": "https://registry.npmjs.org/"
+  }
+}
