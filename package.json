@@ -1,6 +1,6 @@
 {
   "name": "htmltyper",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "HTML富文本逐字显示动画效果",
   "main": "index.js",
   "scripts": {
