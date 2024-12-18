@@ -1,11 +1,11 @@
 export default (function () {
   const privateProperty = new WeakMap();
   const createElementFromString = (htmlString) => {
-    if (htmlStr.trim().startsWith('<t')) {
-      htmlStr = `<table>${htmlStr}</table>`
+    if (htmlString.trim().startsWith('<t')) {
+      htmlString = `<table>${htmlString}</table>`
     }
     const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = htmlStr;
+    tempDiv.innerHTML = htmlString;
     const lastChild = (el) => el.firstChild ? lastChild(el.firstChild) : el;
     return lastChild(tempDiv);
   }
@@ -19,10 +19,10 @@ export default (function () {
     get html () {
       return privateProperty[this].html;
     }
-    async animate (el) {
+    async animate (el, time = 20) {
       privateProperty[this].html = el.innerHTML;
       el.innerHTML = '';
-      this.run(el)
+      this.run(el, time)
     }
     async run (el, time = 20) {
         const elStock = [];
@@ -31,7 +31,8 @@ export default (function () {
           const char = this.html[i];
           const charNext = i + 1 > this.html.length ? "" : this.html[i + 1];
           if (char === "<" && charNext !== "/" && current.tagName !== 'CODE') {
-            var tagName = nodeStr = '';
+            var tagName = ''
+            var nodeStr = '';
             var flag = 1
             while (this.html[i] !== ">") {
               nodeStr += this.html[i];
